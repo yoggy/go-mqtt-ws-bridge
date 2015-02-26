@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>mqtt_pub_sub.js test</title>
+		<link rel="stylesheet" href="github.css">
+		<script src="./jquery-2.1.3.min.js"></script>
+	    <script src="./mqttws31.js"></script>
+	    <script src="./mqtt_pub_sub.js"></script>
+	</head>
+	<body>
+		<h1>mqtt_pub_sub.js test</h1>
+		<hr/>
+		<div>
+			<h2>publish (topic=test_topic)</h2>
+			<input id="publish_message" type="text" disabled="disabled" />
+			<input id="publish_button" type="button" value="publish" disabled="disabled" />
+		</div>
+		<div>
+			<h2>subscribe (topic=test_topic)</h2>
+			<div id="log"></div>
+		</div>
+	</body>
+</html>
