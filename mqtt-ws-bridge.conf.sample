@@ -1,0 +1,27 @@
+;
+; mqtt-ws-bridge.conf.sample - for supervisord configuration file
+;
+; install
+;     $ pwd
+;       (check your scrpt path...)
+;     $ sudo cp mqtt-ws-bridge.conf.sample /etc/supervisor/conf.d/mqtt-ws-bridge.conf
+;     $ sudo vi /etc/supervisor/conf.d/mqtt-ws-bridge.conf
+;       (fix path, etc...)
+;     $ sudo supervisorctl reread
+;     $ sudo supervisorctl add mqtt-ws-bridge
+;     $ sudo supervisorctl status
+;     mqtt-ws-bridge                  RUNNING    pid 8192, uptime 0:00:30
+;
+; see also
+;     Supervisor: A Process Control System
+;     http://supervisord.org/
+;
+[program:mqtt-ws-bridge]
+command         = /usr/bin/go run mqtt-ws-bridge.go
+directory       = /home/username/go/src/github.com/yoggy/go-mqtt-ws-bridge/
+numprocs        = 1
+autostart       = true
+autorestart     = true
+redirect_stderr = true
+user            = test
+environment     = HOME=/home/username/,GOPATH=/home/username/go
