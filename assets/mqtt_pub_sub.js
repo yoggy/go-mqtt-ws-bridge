@@ -74,7 +74,7 @@ function onMessageArrived(message) {
 }
 
 function init() {
-	client = new Paho.MQTT.Client(location.hostname, Number(location.port), path, clientID);
+	client = new Paho.MQTT.Client(location.hostname, Number(location.port)||80, path, clientID);
 	client.onConnectionLost = onConnectionLost;
 	client.onMessageArrived = onMessageArrived;
 	client.connect({
